@@ -4,22 +4,39 @@ import DiGithubBadge from 'svelte-icons/di/DiGithubBadge.svelte'
 
 <header>
   <nav >
-    <a href="">
-      <DiGithubBadge/>
-    </a>
+
+        <a href="https://github.com/saranatour1/scroll">
+        <DiGithubBadge/>
+        </a>
 
   </nav>
 
 </header>
   
 <style>
-  nav{
+  header{
     width: 100dvw;
-    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  div{
-    width: 40px;
+  a{
+    width: 3rem;
   }
+  nav{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 80%;
+    height: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+a:hover{
+  filter: drop-shadow(0 0 0.2rem crimson);
+  /* width: auto;
+  height: auto; */
+}
 </style>
 
 
