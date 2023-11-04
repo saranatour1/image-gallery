@@ -42,8 +42,8 @@
 	<meta name="description" content=" a list of images that I took over the years of sunset and/or sunrise that I thought were cool to show" />
   <meta property="og:title" content="Sunset and Sunrise Pictures" />
   <meta property="og:description" content=" a list of images that I took over the years of sunset and/or sunrise that I thought were cool to show" />
-  <meta property="og:image" content={`https://sunset-and-sunrise-image-scroller.vercel.app/${openGraghRandom()}`} />
-  <meta property="og:url" content="https://sunset-and-sunrise-image-scroller.vercel.app/" />
+  <meta property="og:image" content={`${openGraghRandom()}`} />
+  <meta property="og:url" content="https://image-gallery-eight-inky.vercel.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Sunset and Sunrise Pictures" />
