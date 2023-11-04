@@ -1,11 +1,19 @@
-<script lang="ts">
-  export let imageArray:string[];
+<script>
+  export let imageArray;
 </script>
 
 <div>
-  {#each imageArray as item}
-    <img src={item} alt="Either sunset or sunrise" loading="lazy"  >
-  {/each}
+  {#await imageArray}
+	<p>...waiting</p>
+{:then}
+{#each imageArray as item}
+<img src={item} alt="Either sunset or sunrise" loading="lazy"  >
+{/each}
+{:catch error}
+	<p style="color: red">{error.message}</p>
+{/await}
+
+
 </div>
 
 <style>

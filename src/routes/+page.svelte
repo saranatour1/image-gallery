@@ -52,7 +52,14 @@
 </svelte:head>
 
 <section>
-	<Scroller imageArray={arraySlice}/>
+  {#await data.all}
+	<p>...waiting</p>
+{:then}
+<Scroller imageArray={arraySlice}/>
+{:catch error}
+	<p style="color: red">{error.message}</p>
+{/await}
+
 </section>
 
 <style>
