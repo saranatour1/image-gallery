@@ -1,14 +1,12 @@
-import {API_KEY} from '$env/static/private';
-// import { json } from '@sveltejs/kit';
-
-
 export async function load() {
-  const arrayOfImages = new Array();
-  for (let i = 1; i <= 162; i++) {
-    arrayOfImages.push(`https://ik.imagekit.io/${API_KEY}/${i}.jpg`);
+  const imagePath = "http://localhost:5173/src/lib/static"; 
+  const arrayOfImages = [];
+
+  for (let i = 1; i <= 235; i++) {
+    arrayOfImages.push(`${imagePath}/${i}.jpg`);
   }
-  // console.log(arrayOfImages[0])
+
   return {
-    all: await arrayOfImages,
+    all: arrayOfImages, 
   };
 }

@@ -1,16 +1,19 @@
-<script lang="ts">
-  import { onMount } from "svelte";
-
-  export let imageArray:string[];
-
-
-
+<script>
+  export let imageArray;
 </script>
 
-<div >
-  {#each imageArray as item,index}
-    <img src={item} alt="Probably the sunset or sunrise" loading="lazy"  >
-  {/each}
+<div>
+  {#await imageArray}
+	<p>...waiting</p>
+{:then}
+{#each imageArray as item}
+<img src={item} alt="Either sunset or sunrise" loading="lazy"  >
+{/each}
+{:catch error}
+	<p style="color: red">{error.message}</p>
+{/await}
+
+
 </div>
 
 <style>
@@ -22,12 +25,16 @@
     gap: 5px;
     justify-items: center;
     margin: 0 auto; 
+    object-fit: cover;
+    scroll-behavior: smooth;
   }
-  
+
   img {
     width: 100%;
     max-width: 600px; 
+    transition: transform 0.3s ease-in-out;
   }
+
   </style>
   
   
